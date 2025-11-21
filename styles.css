@@ -178,6 +178,13 @@ a { text-decoration: none; color: inherit; }
   font-size: 1.15rem;
   line-height: 1.8;
   margin: 8px 0;
+  text-align: justify;           /* make lines fit end-to-end */
+  text-justify: inter-word;      /* prefer inter-word justification */
+  hyphens: auto;                 /* allow hyphenation for long words */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  text-align-last: left;         /* control last line alignment */
 }
 
 /* ------------------------------------------------------------------------- */
