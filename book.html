@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tawheed</title>
+    <link rel="icon" href="static/icons/tawheed-logo-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="topbar book-topbar">
+        <div class="back-container">
+            <button id="backBtn" class="back-btn"><img src="static/icons/back-button-icon.png"></button>
+        </div>
+        <div class="inner">
+            <div class="logo-container"><img class="logo" src="static/icons/tawheed-logo-icon.png" /></div>
+            <div class="site-title">TAWHEED</div>
+        </div>
+        <div class="topbar-actions">
+            <button id="downloadPdfBtn" class="download-pdf-btn" title="Download PDF"><img
+                    src="static/icons/download-button-icon.png" alt="PDF"></button>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <div class="reader-wrap">
+            <div id="reader" class="reader">Loading…</div>
+        </div>
+    </main>
+
+    <script src="parser.js"></script>
+    <script src="book.js"></script>
+    <script src="pdf.js"></script>
+</body>
+
+</html>

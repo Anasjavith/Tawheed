@@ -1,0 +1,285 @@
+/* styles.css - mobile-first
+   Reorganized version (functionality unchanged)
+   Fonts and variables
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap");
+
+:root {
+  --accent: #0f1724;
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --card: #fbfbfb;
+  --maxw: 900px;
+}
+
+/* Basic reset */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  font-family: "Noto Sans Tamil", system-ui, -apple-system, "Segoe UI", Roboto;
+  color: #111;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ------------------------------------------------------------------------- */
+/* Header / Topbar */
+/* ------------------------------------------------------------------------- */
+
+.topbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 58px;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topbar .inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* site title */
+.site-title {
+  margin-left: 8px;
+  font-weight: 700;
+  font-size: 2.05rem;
+  font-family: "Cinzel Decorative", serif;
+  font-style: normal;
+}
+
+/* small helpers used inside topbar */
+.top-bar-dummy { width: 47px; }
+
+/* logo sizing */
+.logo, .logo-container { width: 45px; height: 45px; }
+
+/* topbar action area */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Layout: container / reader / list */
+/* ------------------------------------------------------------------------- */
+
+.container {
+  max-width: var(--maxw);
+  margin: 80px auto 20px;
+  padding: 0 12px;
+}
+
+/* Reader */
+.reader {
+  background: white;
+  padding: 15px;
+}
+
+/* Reader small structural helper */
+.reader-wrap { margin-top: 8px; }
+
+/* Back button container (top-left on book page) */
+.back-container {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+/* back button style */
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Book topbar area (download button etc.) */
+.book-topbar { display: flex; justify-content: space-between; }
+.download-pdf-btn {
+  border: none;
+  background: white;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.download-pdf-btn img { width: 30px; height: 30px; }
+
+/* ------------------------------------------------------------------------- */
+/* List / Cards */
+/* ------------------------------------------------------------------------- */
+
+.list-heading { font-size: 1rem; margin-bottom: 12px; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between books (increased) */
+}
+
+/* Card: white background, border and slight interaction */
+.card {
+  margin: 12px;
+  padding: 12px;
+  background: #ffffff; /* pure white */
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.card:active { transform: scale(0.98); }
+
+.card-left { display: flex; flex-direction: column; gap: 4px; }
+.card-title { font-size: 1rem; font-weight: 600; }
+.card-meta { font-size: 0.8rem; color: var(--muted); }
+
+/* download button (in card) */
+.btn-download {
+  border: none;
+  padding: 7px 7px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Typography and content blocks */
+/* ------------------------------------------------------------------------- */
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0;
+}
+.content-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Quran block styling (RTL Arabic) */
+/* ------------------------------------------------------------------------- */
+
+.quran-block {
+  font-family: "Noto Naskh Arabic", serif;
+  direction: rtl;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
+.q-line {
+  margin: 4px 0;
+  font-size: 30px;
+}
+
+/* verse reference styling (keeps it stable and non-overlapping) */
+.verse-ref {
+  display: block;             /* forces its own line */
+  text-align: right;          /* align right */
+  direction: ltr;             /* print-friendly direction */
+  font-size: 14px;
+  margin-top: 6px;
+  padding-right: 8px;
+  line-height: 1.6;
+  white-space: normal !important;
+}
+
+/* small helper */
+.spacer { display: block; height: 10px; }
+
+/* ------------------------------------------------------------------------- */
+/* Decorative font helpers (Cinzel weights) - no functional change */
+/* ------------------------------------------------------------------------- */
+
+.cinzel-decorative-regular { font-family: "Cinzel Decorative", serif; font-weight: 400; }
+.cinzel-decorative-bold    { font-family: "Cinzel Decorative", serif; font-weight: 700; }
+.cinzel-decorative-black   { font-family: "Cinzel Decorative", serif; font-weight: 900; }
+
+/* mail icon / inline element */
+.mail { display: inline-block; font-size: 1.4rem; }
+
+/* ------------------------------------------------------------------------- */
+/* Footer */
+/* ------------------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid #eee;
+  margin-top: 28px;
+  padding: 18px 12px;
+  background: transparent;
+}
+.site-footer .inner-footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.site-footer .footer-statement { color: var(--muted); font-size: 0.95rem; }
+.site-footer .footer-contact a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.site-footer .footer-contact a:hover { text-decoration: underline; }
+
+/* ------------------------------------------------------------------------- */
+/* Print rules: hide UI chrome but keep content visible for printing */
+/* ------------------------------------------------------------------------- */
+
+@media print {
+  /* hide navigation and controls */
+  header, .topbar, .btn-download, .download-pdf-btn, .card-actions, .back-btn, .logo, .site-title {
+    display: none !important;
+  }
+
+  /* ensure main content is visible and flows for print */
+  body, .container, .reader, #reader, .printable {
+    visibility: visible !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .printable { padding: 0.5in !important; }
+
+  /* avoid breaking inside paragraphs/blocks */
+  .printable p,
+  .printable .content-text,
+  .printable .quran-block,
+  .printable h1,
+  .printable .verse-ref {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    orphans: 2;
+    widows: 2;
+  }
+}
+
