@@ -175,16 +175,16 @@ a { text-decoration: none; color: inherit; }
   margin: 10px 0;
 }
 .content-text {
-  font-size: 1.15rem;
+  font-size: 0.98rem;
   line-height: 1.8;
   margin: 8px 0;
-  text-align: justify;           /* make lines fit end-to-end */
-  text-justify: inter-word;      /* prefer inter-word justification */
-  hyphens: auto;                 /* allow hyphenation for long words */
+  text-align: justify;           
+  text-justify: inter-word;      
+  hyphens: auto;        
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   word-break: normal;
-  text-align-last: left;         /* control last line alignment */
+  text-align-last: left;          
 }
 
 /* ------------------------------------------------------------------------- */
